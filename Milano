@@ -1,0 +1,25 @@
+using System;
+
+class Milano
+{
+    static void Main()
+    {
+        //Tamaño de la cola de milano
+        int baseWidth = 16;
+        int topWidth = 10;
+        int height = 4;
+
+        for (int row = 0; row < height; row++)
+        {
+            for (int col = 0; col < baseWidth; col++)
+            {
+                char point = (col >= (baseWidth - topWidth) / 2 && col < (baseWidth + topWidth) / 2) ? '.' : ' ';
+                Console.Write(point);
+            }
+            Console.WriteLine();
+            topWidth -= 2;   //Reduce el ancho superior en 2 en cada fila para formar la cola de milano
+        }
+
+        Console.ReadLine();
+    }
+}
